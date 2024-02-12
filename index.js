@@ -34,6 +34,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     console.log(resp,"sqsqsq");
 //   }
 //   makeCall();
+app.post('/webhooks/events', (req, res) => {
+   console.log(req.body.status,"req.body.status")
+  res.status(200).end()
+})
   app.get('/webhooks/answer', (req, res) => {
     // console.log(req.body,'req.body')
     // const number = req.body.from.split('').join(' ');
