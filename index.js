@@ -34,6 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     console.log(resp,"sqsqsq");
 //   }
 //   makeCall();
+console.log("wdwddwdwdwdwd")
 app.post('/webhooks/events', (req, res) => {
    console.log(req.body.status,"req.body.status")
   res.status(200).end()
