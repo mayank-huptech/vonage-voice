@@ -8,16 +8,16 @@ const { NCCOBuilder, Talk, OutboundCallWithNCCO } = require('@vonage/voice')
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const privatePath=path.resolve(__dirname,process.env.VONAGE_PRIVATE_KEY_PATH)
-var privateKey = fs.readFileSync(privatePath, 'utf8');
-const credentials = {
-    apiKey: process.env.VONAGE_API_KEY,
-    apiSecret: process.env.VONAGE_API_SECRET,
-    applicationId: process.env.VONAGE_APPLICATION_ID,
-    privateKey: privateKey
-  };
-  const options = {debug: true};
-  const vonage = new Vonage(credentials, options);
+// const privatePath=path.resolve(__dirname,process.env.VONAGE_PRIVATE_KEY_PATH)
+// var privateKey = fs.readFileSync(privatePath, 'utf8');
+// const credentials = {
+//     apiKey: process.env.VONAGE_API_KEY,
+//     apiSecret: process.env.VONAGE_API_SECRET,
+//     applicationId: process.env.VONAGE_APPLICATION_ID,
+//     privateKey: privateKey
+//   };
+//   const options = {debug: true};
+//   const vonage = new Vonage(credentials, options);
   
 // async function makeCall() {
 //     const builder = new NCCOBuilder();
