@@ -7,6 +7,7 @@ const fs = require('fs');
 const { NCCOBuilder, Talk, OutboundCallWithNCCO } = require('@vonage/voice')
 const app = express();
 app.use(bodyParser.json());
+app.enable('trust proxy')
 app.use(bodyParser.urlencoded({ extended: true }));
 // const privatePath=path.resolve(__dirname,process.env.VONAGE_PRIVATE_KEY_PATH)
 // var privateKey = fs.readFileSync(privatePath, 'utf8');
