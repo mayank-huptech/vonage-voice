@@ -35,8 +35,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   }
 //   makeCall();
 console.log("wdwddwdwdwdwd")
-app.post('/webhooks/events', (req, res) => {
-   console.log(req.body.status,"req.body.status")
+app.get('/webhooks/events', (req, res) => {
+   console.log(req,"req.body.status")
   res.status(200).end()
 })
   app.get('/webhooks/answer', (req, res) => {
@@ -46,7 +46,8 @@ app.post('/webhooks/events', (req, res) => {
     const ncco = [
       {
         action: 'talk',
-        text: 'Thank you for calling to mayank. mayank is available soon as possible '
+        text: 'Thank you for calling to mayank. mayank is available soon as possible',
+        language: "en-US"
       },
 
     ];
