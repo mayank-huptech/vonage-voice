@@ -78,6 +78,7 @@ app.post('/webhooks/events', (req, res) => {
     console.log('Websocket connection is open');
   });
   app.ws('/socket', (ws, req) => {
+    console.log(req)
     const wav = new WaveFile(fs.readFileSync("./sound.wav"));
     wav.toSampleRate(16000);
     wav.toBitDepth("16");
