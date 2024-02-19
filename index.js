@@ -65,13 +65,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   makeCall();
 console.log("wdwddwdwdwdwd")
 app.get('/webhooks/events', (req, res) => {
-   console.log(req,"req.body.status")
-   res.send(200);
+   console.log(req.query,"req.body.status")
+   let nccoResponse = [
+    {
+        "action": "talk",
+        "text": "Please wait while we connect you to the echo server"
+    }
+]
+
+  console.log("call comming,.....")
+  res.status(200).json(nccoResponse);
 })
   app.get('/webhooks/answer', (req, res) => {
     // console.log(req.body,'req.body')
     // const number = req.body.from.split('').join(' ');
-    console.log(req?.query)
+    console.log(req?.query,"req.body.status")
     let nccoResponse = [
       {
           "action": "talk",
