@@ -1,14 +1,8 @@
 require('dotenv').config();
 const { Vonage }  = require('@vonage/server-sdk');
-const WaveFile = require('wavefile').WaveFile;
 const bodyParser = require('body-parser');
-
 const express = require('express');
-const path = require('path');
-const fs = require('fs');
-const { NCCOBuilder, Talk, OutboundCallWithNCCO } = require('@vonage/voice')
 const app = express();
-const expressWs = require('express-ws')(app);
 app.use(bodyParser.json());
 app.enable('trust proxy')
 app.use(express.urlencoded({ extended: true }));
@@ -33,21 +27,21 @@ app.get('/webhooks/events', (req, res) => {
    console.log(req.query,"/webhooks/events")
    let nccoResponse = [
     {
-        "action": "talk",
-        "text": "Please wait while we connect you to the echo server"
+        action: "talk",
+        text: "Please wait while we connect you to the echo server"
     }
 ]
-
-  console.log("/webhooks/events call comming,.....")
+  console.log("/webhooks/events")
   res.status(200).json(nccoResponse);
 })
-  app.get('/webhooks/answer', (req, res) => {
+app.get('/webhooks/answer', (req, res) => {
     console.log(req?.query,"/webhooks/answer")
     let nccoResponse = [
       {
           action: "talk",
-          text: "Please wait while we connect you to the echo server"
-      }
+          text: "Hello mayank is bussy right now please wait for sometime. or mayank will get back later"
+      },
+   
   ]
     console.log(" /webhooks/answer call comming,.....")
     res.status(200).json(nccoResponse);
