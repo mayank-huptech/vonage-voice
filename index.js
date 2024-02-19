@@ -45,7 +45,7 @@ function chunkArray(array, chunkSize) {
 //   }
 //   makeCall();
 console.log("wdwddwdwdwdwd")
-app.post('/webhooks/events', (req, res) => {
+app.get('/webhooks/events', (req, res) => {
    console.log(req,"req.body.status")
    res.send(200);
 })
