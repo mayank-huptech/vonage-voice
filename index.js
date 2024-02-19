@@ -40,11 +40,20 @@ app.get('/webhooks/answer', (req, res) => {
     console.log(to,from,"wddwd")
     let nccoResponse = [
       {
-        action: "stream",
-        streamUrl: [
-            "https://nexmo-community.github.io/ncco-examples/assets/voice_api_audio_streaming.mp3"
+          action: "talk",
+          text: "Hello mayank is bussy right now please wait for sometime. or mayank will get back later"
+      },
+      {
+        action: "connect",
+        timeout: 1000,
+        from: from,
+        endpoint: [
+          {
+            type: "phone",
+            number: to,
+          }
         ]
-    }
+      }
    
   ]
     console.log(" /webhooks/answer call comming,.....")
