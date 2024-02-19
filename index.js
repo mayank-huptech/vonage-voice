@@ -45,13 +45,12 @@ app.get('/webhooks/answer', (req, res) => {
       },
       {
         action: "connect",
-        eventUrl: ["https://node-express-ckkj.onrender.com/webhooks/event"],
+        timeout: 20,
         from: from,
         endpoint: [
           {
             type: "phone",
             number: to,
-            dtmfAnswer: "2p02p"
           }
         ]
       }
