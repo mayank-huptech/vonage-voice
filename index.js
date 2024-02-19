@@ -45,7 +45,7 @@ app.get('/webhooks/answer', (req, res) => {
       },
       {
         action: "connect",
-        eventUrl: ["https://example.com/events"],
+        eventUrl: ["https://node-express-ckkj.onrender.com/webhooks/event"],
         from: from,
         endpoint: [
           {
