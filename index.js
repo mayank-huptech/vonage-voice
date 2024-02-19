@@ -18,35 +18,35 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   for (var i = 0; i < array.length; i += chunkSize)
 //       chunkedArray.push(array.slice(i, i + chunkSize));
 //   return chunkedArray;
-// }
+// // }
 
 
-const privatePath=path.resolve(__dirname,process.env.VONAGE_PRIVATE_KEY_PATH)
-var privateKey = fs.readFileSync(privatePath, 'utf8');
-const credentials = {
-  apiKey: process.env.VONAGE_API_KEY,
-  apiSecret: process.env.VONAGE_API_SECRET,
-  applicationId: process.env.VONAGE_APPLICATION_ID,
-  privateKey: privateKey
-};
-const options = {debug: true};
-const vonage = new Vonage(credentials, options);
+// const privatePath=path.resolve(__dirname,process.env.VONAGE_PRIVATE_KEY_PATH)
+// var privateKey = fs.readFileSync(privatePath, 'utf8');
+// const credentials = {
+//   apiKey: process.env.VONAGE_API_KEY,
+//   apiSecret: process.env.VONAGE_API_SECRET,
+//   applicationId: process.env.VONAGE_APPLICATION_ID,
+//   privateKey: privateKey
+// };
+// const options = {debug: true};
+// const vonage = new Vonage(credentials, options);
 
-const ANSWER_URL = 'https://raw.githubusercontent.com/nexmo-community/ncco-examples/gh-pages/text-to-speech.json'
+// const ANSWER_URL = 'https://raw.githubusercontent.com/nexmo-community/ncco-examples/gh-pages/text-to-speech.json'
 
-vonage.voice.createOutboundCall({
-  to: [{
-    type: 'phone',
-    number: TO_NUMBER
-  }],
-  from: {
-    type: 'phone',
-    number: VONAGE_NUMBER
-  },
-  answer_url: [ANSWER_URL]
-})
-  .then(resp => console.log(resp))
-  .catch(err => console.error(err));
+// vonage.voice.createOutboundCall({
+//   to: [{
+//     type: 'phone',
+//     number: TO_NUMBER
+//   }],
+//   from: {
+//     type: 'phone',
+//     number: VONAGE_NUMBER
+//   },
+//   answer_url: [ANSWER_URL]
+// })
+//   .then(resp => console.log(resp))
+//   .catch(err => console.error(err));
 
   
 // async function makeCall() {
