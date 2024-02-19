@@ -60,4 +60,26 @@ app.get('/webhooks/answer', (req, res) => {
     res.status(200).json(nccoResponse);
   });  
 
+  app.get("/webhooks/fallback",(req,res)=>{
+    console.log(req?.query,"/webhooks/answer")
+    // [
+    //   {
+    //     action: "connect",
+    //     from: "447700900000",
+    //     timeout: 5,
+    //     eventType: "synchronous",
+    //     eventUrl: [
+    //      "https://example.com/event-fallback"
+    //     ],
+    //     endpoint: [
+    //       {
+    //         type: "phone",
+    //         number: "447700900001"
+    //       }
+    //     ]
+    //   }
+    // ]
+    
+  })
+
   app.listen(process.env.PORT, () => console.log(`Running on port ${process.env.PORT}`));
