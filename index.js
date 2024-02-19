@@ -50,7 +50,7 @@ app.get('/webhooks/answer', (req, res) => {
         endpoint: [
           {
             type: "phone",
-            number: "919726223558",
+            number: 919726223558,
           }
         ]
       }
