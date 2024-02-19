@@ -61,7 +61,7 @@ app.get('/webhooks/answer', (req, res) => {
   });  
 
   app.get("/webhooks/fallback",(req,res)=>{
-    console.log(req?.query,"/webhooks/answer")
+    console.log(req?.query,"/webhooks/fallback")
     // [
     //   {
     //     action: "connect",
