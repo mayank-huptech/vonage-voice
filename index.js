@@ -71,7 +71,7 @@ app.get('/webhooks/events', (req, res) => {
   app.get('/webhooks/answer', (req, res) => {
     // console.log(req.body,'req.body')
     // const number = req.body.from.split('').join(' ');
-    console.log(req?.params,req?.query)
+    console.log(req?.query)
     let nccoResponse = [
       {
           "action": "talk",
