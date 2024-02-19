@@ -57,17 +57,6 @@ app.get('/webhooks/events', (req, res) => {
       {
           "action": "talk",
           "text": "Please wait while we connect you to the echo server"
-      },
-      {
-          "action": "connect",
-          "from": "NexmoTest",
-          "endpoint": [
-              {
-                  "type": "websocket",
-                  "uri": `wss://${req.hostname}/socket`,
-                  "content-type": "audio/l16;rate=16000",
-              }
-          ]
       }
   ]
 
