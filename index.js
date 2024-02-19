@@ -36,11 +36,27 @@ app.get('/webhooks/events', (req, res) => {
 })
 app.get('/webhooks/answer', (req, res) => {
     console.log(req?.query,"/webhooks/answer")
+    const {to,from}=req?.query
     let nccoResponse = [
       {
           action: "talk",
           text: "Hello mayank is bussy right now please wait for sometime. or mayank will get back later"
       },
+      {
+        action: "connect",
+        from: from,
+        timeout: 5,
+        eventType: "synchronous",
+        eventUrl: [
+          "https://example.com/event-fallback"
+        ],
+        endpoint: [
+          {
+            type: "phone",
+            number: to
+          }
+        ]
+      }
    
   ]
     console.log(" /webhooks/answer call comming,.....")
